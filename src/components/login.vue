@@ -127,7 +127,7 @@
 								$this.showMessage(data.msg);
 								$this.isSubmit=true;
 								$loginBtn.val('登录');
-
+								
 		                        if (data.needAuth) {
 		                        	$("#diaglog").addClass("codeAfterDiaglog");
 		                            $("#login-code").insertBefore($loginBtn).show();
@@ -213,10 +213,8 @@
                         $this.showMessage("手机号未注册，请先注册")
                         mobilePass = false
                         return;
-
                     }
                     mobilePass = true
-
                 }
             })
         }

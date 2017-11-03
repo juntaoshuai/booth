@@ -4,7 +4,7 @@
         <div class="slideMore">下拉刷新</div>
         <div class="chat-list clearfix">
             <!-- <p class="chat-time">2017-10-10 9:00</p> -->
-            <div class="clearfix"  v-for="mess in privateMessage">
+            <div class="clearfix"  v-for="(mess,index) in privateMessage" :key="index">
                 <div  :class="mess.author.userType==1 || mess.author.userType==5 ?'myself-say':'other-say'"  v-html="mess.content"></div>    
             </div>
         </div>
