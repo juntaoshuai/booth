@@ -94,8 +94,8 @@ export default {
 			val2:'',
 			id:'',
 			lookShow:false,
-			remark:'暂无内容',				//备注
-			name:'',							//产品名称
+			remark:'暂无内容', //备注
+			name:'', //产品名称
 			urlList:new Array(),
 			loginurl:'http://expo.ofweek.com/mobile/login.xhtml?callback='+location.href
 		}
