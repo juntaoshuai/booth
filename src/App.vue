@@ -32,7 +32,7 @@
             <!--私聊-->
             <private-chat :isLogin="isLogin"  v-show="isPrivateChat && navActive == 0"></private-chat>
             <!-- 展品 -->
-            <my-content2 :visitMode="visitMode" :productarr=productarr :nav-active="navActive" :isLogin="isLogin" :productlist=productlist></my-content2>
+            <my-content2 :visitMode="visitMode" :productarr=productarr :nav-active="navActive" :isLogin="isLogin" :productlist=productlist :user="user"></my-content2>
             <!-- 资料下载 -->
             <my-content3 :loadarr=loadarr :nav-active="navActive"></my-content3>
             <!-- 公司信息 -->
@@ -150,7 +150,8 @@ export default {
       iscard: 0,
       //展台名称
       companyName: "",
-      visitMode: 0 //开启游客模式，0否，1是
+      visitMode: 0, //开启游客模式，0否，1是
+      user: {}
     };
   },
 
@@ -194,6 +195,7 @@ export default {
 
           switch (num) {
             case "20001":
+              $this.user = data.body.user;
               $this.visitMode = data.body.booth.visitMode;
 
               if ($this.visitMode) {

@@ -116,11 +116,20 @@ export default {
 		visitMode: {
             type: Number
         },
+		user: {
+            type: Object
+        }
+
 	},
 	methods:{
+
 		//留言
 		mesBtn:function(id){
-			if(this.isLogin == 1)
+			//游客模式和会员模式都要登录和完善名片
+			if(this.isLogin == 1 && !this.user.cardCompleted){
+				window.location.href = 'http://www.ofweek.com/user/ureg.do?method=toWanShanPage&regType=15&returnurl='+location.href+'&userid='+userLogin.userId
+
+			}else if(this.isLogin == 1 &&　this.user.cardCompleted)
 				this.isShow = 2
 			else{
 				//登录弹窗
@@ -129,7 +138,11 @@ export default {
 		},
 		//样品申请
 		send:function(id){
-			if(this.isLogin == 1){
+			//游客模式和会员模式都要登录和完善名片
+			if(this.isLogin == 1 && !this.user.cardCompleted){
+				window.location.href = 'http://www.ofweek.com/user/ureg.do?method=toWanShanPage&regType=15&returnurl='+location.href+'&userid='+userLogin.userId
+
+			}else if(this.isLogin == 1 &&　this.user.cardCompleted){
 				this.isShow = 1
 				this.id = id
 			}else{

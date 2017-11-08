@@ -4,7 +4,7 @@
 		<div class="play-view" v-if="model==0 || model==2 || model==3" v-show="!isPlaying" v-on:click="clickPlay()" v-bind:style="styleObject">
 			<img class="play-icon" src="../assets/play.png">
 		</div>
-		<!--点播-->
+		<!--轮播-->
 		<div class="video_content" v-if="model==3">
 			<video id="lbVideo" v-bind:poster="vodList[index].bgUrl" v-bind:src="vodList[index].mp4Url" v-show="isPlaying" webkit-playsinline playsinline controls onended="change(this)" v-on:playing="playing"></video>
 		</div>
