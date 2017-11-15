@@ -127,7 +127,7 @@ export default {
 		mesBtn:function(id){
 			//游客模式和会员模式都要登录和完善名片
 			if(this.isLogin == 1 && !this.user.cardCompleted){
-				window.location.href = 'http://www.ofweek.com/user/ureg.do?method=toWanShanPage&regType=15&returnurl='+location.href+'&userid='+userLogin.userId
+				window.location.href = 'http://www.ofweek.com/user/toWanShanLivePage.do?regType=15&returnurl='+location.href+'&userid='+this.user.account
 
 			}else if(this.isLogin == 1 &&　this.user.cardCompleted)
 				this.isShow = 2
@@ -140,7 +140,7 @@ export default {
 		send:function(id){
 			//游客模式和会员模式都要登录和完善名片
 			if(this.isLogin == 1 && !this.user.cardCompleted){
-				window.location.href = 'http://www.ofweek.com/user/ureg.do?method=toWanShanPage&regType=15&returnurl='+location.href+'&userid='+userLogin.userId
+				window.location.href = 'http://www.ofweek.com/user/toWanShanLivePage.do?regType=15&returnurl='+location.href+'&userid='+this.user.account
 
 			}else if(this.isLogin == 1 &&　this.user.cardCompleted){
 				this.isShow = 1
