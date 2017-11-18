@@ -69,7 +69,7 @@ import PrivateChat from "./components/PrivateChat";
 import { socket, port, socketUrl } from "./js/socket";
 import { lookimg, getString, scrollLeft, sortArr, noLogin } from "./js/common";
 import send from "./js/send";
-
+import { MessageBox } from 'mint-ui';
 export default {
   components: {
     headerload,
@@ -588,6 +588,19 @@ export default {
                 author: { name: "" }
               });
               break;
+
+            //申请样品
+            case "20047":
+                if(data.status == 200){
+                    MessageBox('提示', '申请样品成功！');
+                }
+                break;
+
+            case "20011":
+                if(data.status == 200){
+                    MessageBox('提示', '留言发送成功！');
+                }
+                break;
           }
         };
       }

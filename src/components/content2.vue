@@ -85,7 +85,7 @@
 
 <script>
 //	import Swiper from 'swiper'
-	import {getString,noLogin} from '../js/common'
+import {getString,noLogin} from '../js/common'
 export default {
 	data (){
 		return {
